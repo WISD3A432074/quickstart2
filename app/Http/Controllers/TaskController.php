@@ -41,6 +41,10 @@
                           'name' => 'required|max:255',
                       ]);
 
-                      // Create The Task...
+                      $request->user()->tasks()->create([
+                          'name' => $request->name,
+                      ]);
+
+                      return redirect('/tasks');
                   }
  }
